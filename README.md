@@ -6,9 +6,18 @@ output: csv, pdf
 ---
 
 ## Introduction
+This repository contains the code and data required to reproduce the results found in our "Sasquatch Sighting Bureau" presentation for our STAT 172 Final Project. The main goal of this project was to create a predictive model for predicting whether a Bigfoot sighting was considered credible ("Class A") according to the Bigfoot Field Researchers Organization (BFRO). We also were tasked with creating a descriptive model for the same data. 
 
-## Introduction
-This repository contains the code and data required to reproduce the results found in "A Hybrid Approach to Targeting Social Assistance". Specifically, to run simulation studies that estimate out of sample error rates using the Hybrid, Hybrid-AI, Hybrid-EC, and Hybrid-DU models on data from Indonesia (Alatas et al. (2012)) and Burkina Faso (Hillebrecht et al. (2020)). 
+In this analysis, we presented to our proposed client, "Sasquatch Sighting Bureau", who is a call center for Bigfoot related sightings. The main goal was to help the SSB determine if incoming calls are credible or not, and further help them decide key factors as to what situations their clients, Bigfoot Hunters, should put themselves in for success.
+
+Our objective was the following: 
+* Understand key drivers of Bigfoot Sighting Credibility and develop a predictive model to identify chances for Bigfoot Hunters to catch him once and for all.
+
+We set out to answer the following questions:
+1. Is it possible to predict the credibility of sightings?
+2. Can we find which situations may give our experts the best shot at finding Bigfoot?
+
+We determined that we were successful if we were able to build a predictive model whose sensitivity was at or above an 80% threshold. That is, we are able to accurately predict a credible sighting 80% of the time, given the sighting is credible. 
 
 ## Requirements
 To install the required R packages, run the following code in R:
@@ -53,13 +62,13 @@ The above file is used to export the cleaned dataset with the LDA addendum, as w
     *  output/Credibility by Region.pdf
 
 4. Run `src/Bigfoot Master RF.R` to reproduce random forest results and generate relevent plots. 
-  *  output/ROC Curve RF.pdf
-  *  output/Variable Importance Plot.pdf
-  *  output/Random Forest Confusion Matrix.pdf
+    *  output/ROC Curve RF.pdf
+    *  output/Variable Importance Plot.pdf
+    *  output/Random Forest Confusion Matrix.pdf
 
 5. Run `src/Bigfoot Master Regression.R` to reproduce regression results and generate relevent plots. 
-  *  output/ROC Curve MLE.pdf
-  *  output/ROC Curve Lasso.pdf
-  *  output/ROC Curve Ridge.pdf
-  *  output/ROC Curve Comparison Regression Only.pdf
+    *  output/ROC Curve MLE.pdf
+    *  output/ROC Curve Lasso.pdf
+    *  output/ROC Curve Ridge.pdf
+    *  output/ROC Curve Comparison Regression Only.pdf
 
