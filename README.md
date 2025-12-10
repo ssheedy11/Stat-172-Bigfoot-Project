@@ -46,6 +46,8 @@ Please ensure prior to running you create a R project of your own choosing, set 
 Having this folder layout ensures the codes will run as desired. Our `src/Bigfoot Master LDA.R` will automatically run the cleaning code, so please ensure all codes in this repository's `src` folder are installed, as well as the `data/bigfoot.csv`. All outputs will be placed into the `output` folder of your project upon completion of running.
 
 ## Reproduce
+Note: Please do not clear the environment throughout this process. This will be important for the optional last plot that we created.
+
 1. Run `src/Bigfoot Master LDA.R` until the stop point to reproduce cleaning results and LDA results. 
     *  output/Word Frequencies.pdf
     *  output/Final LDA Groupings.pdf
@@ -81,3 +83,5 @@ The above file is used to export the cleaned dataset with the LDA addendum, as w
     *  output/ROC Curve Ridge.pdf
     *  output/ROC Curve Comparison Regression Only.pdf
 
+6. Optional plot creation: Run `src/Bigfoot Combined ROC Code.R` to reproduce the ROC Curve plot that combines the AUC for random forest and regression. Note: This will NOT WORK if you clear the environment at any point, as you need the rocCurve variables for each model.
+    *  output/4 Model ROC Plot.pdf
