@@ -17,7 +17,7 @@ We set out to answer the following questions:
 1. Is it possible to predict the credibility of sightings?
 2. Can we find which situations may give our experts the best shot at finding Bigfoot?
 
-We determined that we were successful if we were able to build a predictive model whose sensitivity was at or above an 80% threshold. That is, we are able to accurately predict a credible sighting 80% of the time, given the sighting is credible. 
+We determined that we were successful if we were able to build a predictive model whose sensitivity was at or above an 80% threshold. That is, given 100 credible sightings, we are able to predict at least 80 of them as credible reports. 
 
 ## Requirements
 To install the required R packages, run the following code in R:
