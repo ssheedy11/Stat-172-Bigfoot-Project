@@ -29,9 +29,9 @@ The data file that will be called for our project is "bigfoot.csv", and can be f
 
 ## Reproduce
 1. Run `src/Bigfoot Master LDA.R` until the stop point to reproduce cleaning results and LDA results. 
-  *  output/Word Frequencies.pdf
-  *  output/Final LDA Groupings.pdf
-  *  output/bigfoot_clean_lda.csv
+    *  output/Word Frequencies.pdf
+    *  output/Final LDA Groupings.pdf
+    *  output/bigfoot_clean_lda.csv
   
 The above file is used to export the cleaned dataset with the LDA addendum, as well as generate plots found in our presentation:
 
