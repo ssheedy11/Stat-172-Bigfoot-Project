@@ -151,11 +151,11 @@ finalforest <- randomForest(classification ~ .,
 #Goal is prediction
 #assuming positive event is Class A!
 pi_hat <- predict(finalforest, test.df, type = "prob")[, "Class A"] #Gets vector of Class A probability
-rocCurve <- roc(response = test.df$classification, 
+forest_rocCurve <- roc(response = test.df$classification, 
                 predictor = pi_hat, #probabilities of Class A, our positive event
                 levels = c("Class B", "Class A")) #First negative event, then positive
 pdf("output/ROC Curve RF.pdf")
-plot(rocCurve, print.thres = TRUE, print.auc = TRUE)
+plot(forest_rocCurve, print.thres = TRUE, print.auc = TRUE)
 title("ROC Plot Random Forest", line = 3)
 dev.off()
 
@@ -167,7 +167,7 @@ dev.off()
 #The area under the curve is .844
 
 #makes a column of predicted values in our test data
-pi_star <- coords(rocCurve, "best", ret = "threshold")$threshold[1]
+pi_star <- coords(forest_rocCurve, "best", ret = "threshold")$threshold[1]
 #makes a new column of predictions
 test.df$forest_pred <- ifelse(pi_hat > pi_star, "1", "0") %>% as.factor()
 
