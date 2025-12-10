@@ -2,7 +2,7 @@
 title: "Bigfoot Credibility Analysis"
 author: "Grace Tollefson, James Axe, and Samuel Sheedy"
 date: "12/10/2025"
-output: 
+output: csv, pdf
 ---
 
 ## Introduction
