@@ -6,6 +6,7 @@ library(tidymodels)
 library(rpart) #classification trees
 library(rpart.plot) #make pretty trees
 library(RColorBrewer)
+library(caret)
 
 #Read in the cleaned LDA data
 bigfoot_RF <- read.csv("raw/bigfoot_clean_lda.csv")
@@ -130,6 +131,8 @@ ggplot(data = rf_results)+
   labs(x = "m mtry value", y = "Area Under the Curve (AUC)")+
   theme_bw()+
   scale_x_continuous(breaks = c(1:12))
+ggsave("output/RandomForestAUC.pdf")
+
 #We can see that 5 is the best value.
 
 #Selects teh best paramters to optimize roc auc
@@ -151,7 +154,10 @@ pi_hat <- predict(finalforest, test.df, type = "prob")[, "Class A"] #Gets vector
 rocCurve <- roc(response = test.df$classification, 
                 predictor = pi_hat, #probabilities of Class A, our positive event
                 levels = c("Class B", "Class A")) #First negative event, then positive
+pdf("output/RocCurveRF.pdf")
 plot(rocCurve, print.thres = TRUE, print.auc = TRUE)
+dev.off()
+
 title("ROC Plot Random Forest")
 
 
@@ -186,6 +192,7 @@ ggplot(data = vi) +
   scale_fill_gradientn(colors = colorRampPalette(brewer.pal(9, "YlGn"))(100)) + 
   labs(x = "Variable Name", y = "Importance", fill = "Importance", title = "Variable Importance") + 
   theme_bw()
+ggsave("VariableImportancePlot.pdf")
 
 
 #fitting a logistic regression using only the most important variables as explanatory variables
@@ -248,6 +255,32 @@ exp(coef(m6))
 
 
 confint(m3)
+
+
+
+cm <- confusionMatrix(
+  factor(test.df$classification_pred),
+  factor(test.df$classification),
+  dnn = c("Prediction", "Reference")
+)
+
+plt <- as.data.frame(cm$table)
+
+plt$Prediction <- factor(plt$Prediction, levels = rev(levels(plt$Prediction)))
+
+ggplot(plt, aes(Prediction, Reference, fill = Freq)) +
+  geom_tile() +
+  geom_text(aes(label = Freq), color = "black") +
+  scale_fill_gradientn(colors = colorRampPalette(brewer.pal(9, "YlGn"))(100)) +
+  labs(
+    title = "Random Forest Confusion Matrix",
+    x = "Prediction",
+    y = "Actual"
+  ) +
+  scale_x_discrete(labels = c("Class B", "Class A")) +
+  scale_y_discrete(labels = c("Class A", "Class B"))
+ggsave("output/RandomForestConfusionMatrix.pdf")
+
 
 
 
