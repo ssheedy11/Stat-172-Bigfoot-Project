@@ -12,9 +12,9 @@ To install the required R packages, run the following code in R:
 
 
 ```r
-install.packages(c("dplyr", "ggplot2", "httr", "jsonlite", "lubridate", "lunar",
-                   "mice", "pbapply", "RColorBrewer", "reshape2", "tidytext", 
-                   "tidyverse", "topicmodels"))
+install.packages(c("caret", "dplyr", "glmnet", "ggplot2", "httr", "jsonlite", "lubridate", "lunar",
+                   "mice", "pbapply", "pROC", "randomForest","RColorBrewer", "reshape2", 
+                   "rpart", "rpart.plot", "tidymodels", "tidytext", "tidyverse", "topicmodels"))
 ```
 
 
