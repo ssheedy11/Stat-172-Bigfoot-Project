@@ -25,7 +25,7 @@ We use one source of data, containing information on weather, people's first han
 
 [data/2022/2022-09-13](https://github.com/rfordatascience/tidytuesday/tree/main/data/2022/2022-09-13)
 
-The data file that will be called for our project is "bigfoot.csv".
+The data file that will be called for our project is "bigfoot.csv", and can be found in this repository at `data/bigfoot.csv`.
 
 ## Reproduce
 1. Run `src/Bigfoot Master LDA.R` until the stop point to reproduce cleaning results and LDA results. 
