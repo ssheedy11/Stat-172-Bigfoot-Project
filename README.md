@@ -36,6 +36,15 @@ We use one source of data, containing information on weather, people's first han
 
 The data file that will be called for our project is "bigfoot.csv", and can be found in this repository at `data/bigfoot.csv`.
 
+## File Structure
+Please ensure prior to running you create a R project of your own choosing, set to a new folder. For example, here is our R Project Folder Layout:
+* Bigfoot Project (Folder set as the project folder)
+  * data
+  * output
+  * src
+
+Having this folder layout ensures the codes will run as desired. Our `src/Bigfoot Master LDA.R` will automatically run the cleaning code, so please ensure all codes in this repository's `src/` folder are installed, as well as the `data/bigfoot.csv`. All outputs will be placed into the `output/` folder of your project upon completion of running.
+
 ## Reproduce
 1. Run `src/Bigfoot Master LDA.R` until the stop point to reproduce cleaning results and LDA results. 
     *  output/Word Frequencies.pdf
