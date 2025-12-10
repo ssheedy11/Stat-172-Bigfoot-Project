@@ -35,7 +35,7 @@ The data file that will be called for our project is "bigfoot.csv".
   
 The above file is used to export the cleaned dataset with the LDA addendum, as well as generate plots found in our presentation:
 
-2. This step is optional. If you would like the additional LDA Testing Graphs, run `Bigfoot Master LDA.R` from the stopping point to the bottom to reproduce the testing results.
+2. This step is optional. If you would like the additional LDA Testing Graphs, run `src/Bigfoot Master LDA.R` from the stopping point to the bottom to reproduce the testing results.
     *  output/LDA - 5 Topics.pdf
     *  output/LDA - 6 Topics.pdf
     *  output/LDA - 7 Topics.pdf
