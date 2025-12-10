@@ -1,4 +1,4 @@
-bigfoot_lda <- read.csv("final/output/bigfoot_clean_lda.csv")
+bigfoot_lda <- read.csv("output/bigfoot_clean_lda.csv")
 
 #classification by locations
 ggplot(bigfoot_lda) +
